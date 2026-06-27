@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  /* =========================
+     COLORS — base
+     ========================= */
+
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-surface: #1a1a1a;
+
+  --text-primary: #ffffff;
+  --text-secondary: #c5c5c5;
+  --text-muted: #8b8b8b;
+
+  --accent: #c1432b;
+  --accent-rgb: 193, 67, 43;
+  --accent-hover: #e15a3d;
+  --accent-dark: #7a2a1c;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* =========================
+     COLORS — semantic tiers
+     Used across card surfaces, borders, and secondary text
+     so the whole site can be re-themed from one place.
+     ========================= */
+
+  --surface-card: #111111;
+  --surface-card-hover: #151515;
+  --surface-deep: #0a0a0a;
+  --overlay-scrim: rgba(10, 10, 10, 0.55);
+  --navbar-scrim: rgba(10, 10, 10, 0.7);
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-default: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.2);
+
+  --text-faint: rgba(255, 255, 255, 0.35);
+  --text-soft: rgba(255, 255, 255, 0.45);
+  --text-muted-2: rgba(255, 255, 255, 0.55);
+  --text-tertiary: rgba(255, 255, 255, 0.7);
+
+  --on-accent: #ffffff;
+
+  --state-success: #4caf7d;
+  --state-success-bg: rgba(76, 175, 125, 0.12);
+  --state-success-border: rgba(76, 175, 125, 0.3);
+
+  --state-warning: #e0a23c;
+  --state-warning-rgb: 224, 162, 60;
+  --state-warning-bg: rgba(224, 162, 60, 0.12);
+  --state-warning-border: rgba(224, 162, 60, 0.3);
+
+  --state-error: #e2574c;
+  --state-error-bg: rgba(226, 87, 76, 0.12);
+  --state-error-border: rgba(226, 87, 76, 0.3);
+
+  /* =========================
+     TYPOGRAPHY
+     ========================= */
+
+  --font-display: "Fraunces", serif;
+  --font-body: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --fs-display: clamp(4rem, 8vw, 8rem);
+  --fs-h1: clamp(3rem, 5vw, 5rem);
+  --fs-h2: clamp(2rem, 4vw, 3rem);
+  --fs-h3: clamp(1.5rem, 3vw, 2rem);
+
+  --fs-body-lg: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* =========================
+     SPACING (8px GRID)
+     ========================= */
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* =========================
+     RADIUS
+     ========================= */
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* =========================
+     LAYOUT
+     ========================= */
+
+  --container-width: 1200px;
+  --reading-width: 720px;
+
+  /* =========================
+     SHADOWS
+     ========================= */
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 24px rgba(193, 67, 43, 0.2);
+
+  /* =========================
+     TRANSITIONS
+     ========================= */
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  --section-gap: 120px;
+}
+
+/* ================================================================
+   LIGHT MODE
+   Toggled by adding class="light-mode" to <body>.
+   Every component reads the same variable names above, so this
+   is the only place a light theme needs to be defined.
+================================================================ */
+
+body.light-mode {
+  --bg-primary: #f7f5f2;
+  --bg-secondary: #ffffff;
+  --bg-surface: #efece7;
+
+  --text-primary: #161412;
+  --text-secondary: #4a4642;
+  --text-muted: #7a756e;
+
+  --accent: #c1432b;
+  --accent-hover: #a8381f;
+  --accent-dark: #7a2a1c;
+
+  --border-color: rgba(20, 18, 16, 0.1);
+
+  --surface-card: #ffffff;
+  --surface-card-hover: #f5f3f0;
+  --surface-deep: #efece7;
+  --overlay-scrim: rgba(247, 245, 242, 0.7);
+  --navbar-scrim: rgba(247, 245, 242, 0.82);
+
+  --border-subtle: rgba(20, 18, 16, 0.06);
+  --border-default: rgba(20, 18, 16, 0.12);
+  --border-strong: rgba(20, 18, 16, 0.25);
+
+  --text-faint: rgba(20, 18, 16, 0.4);
+  --text-soft: rgba(20, 18, 16, 0.5);
+  --text-muted-2: rgba(20, 18, 16, 0.62);
+  --text-tertiary: rgba(20, 18, 16, 0.75);
+
+  --on-accent: #ffffff;
+
+  --state-success: #2a8a5c;
+  --state-success-bg: rgba(42, 138, 92, 0.1);
+  --state-success-border: rgba(42, 138, 92, 0.3);
+
+  --state-warning: #b9791f;
+  --state-warning-rgb: 185, 121, 31;
+  --state-warning-bg: rgba(185, 121, 31, 0.1);
+  --state-warning-border: rgba(185, 121, 31, 0.3);
+
+  --state-error: #c43e33;
+  --state-error-bg: rgba(196, 62, 51, 0.1);
+  --state-error-border: rgba(196, 62, 51, 0.3);
+
+  --shadow-sm: 0 4px 12px rgba(20, 18, 16, 0.08);
+  --shadow-md: 0 12px 32px rgba(20, 18, 16, 0.12);
+  --shadow-glow: 0 0 24px rgba(193, 67, 43, 0.15);
+}
+
+/* Smooth crossfade when the toggle is used */
+body,
+.about-tile,
+.proj-card,
+.contact-link-card,
+.dg-stat-card,
+.dg-meta-item,
+.ab-card,
+.ib-card,
+.problem-card {
+  transition: background-color var(--transition-normal),
+    border-color var(--transition-normal), color var(--transition-normal);
+}

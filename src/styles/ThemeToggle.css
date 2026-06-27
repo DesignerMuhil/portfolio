@@ -1,0 +1,91 @@
+/* ================================================================
+   THEME TOGGLE — floating circular button, bottom-right
+================================================================ */
+
+.theme-toggle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 200;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+
+  transition: border-color var(--transition-normal),
+    transform var(--transition-fast), background var(--transition-normal);
+}
+
+.theme-toggle:hover {
+  border-color: rgba(var(--accent-rgb), 0.45);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+  transform: translateY(0) scale(0.94);
+}
+
+.theme-toggle-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.theme-toggle-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-primary);
+  transition: opacity 0.25s ease, transform 0.35s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.theme-toggle-icon .icon-sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+
+.theme-toggle-icon .icon-moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+body.light-mode .theme-toggle-icon .icon-sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+body.light-mode .theme-toggle-icon .icon-moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+
+@media (max-width: 700px) {
+  .theme-toggle {
+    width: 46px;
+    height: 46px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .theme-toggle-icon,
+  .theme-toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}

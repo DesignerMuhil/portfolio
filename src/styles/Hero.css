@@ -1,0 +1,132 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 120px;
+  box-sizing: border-box;
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-left {
+  max-width: 960px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-label {
+  color: var(--accent);
+}
+
+.hero-title {
+  font-size: clamp(24px, 6vw, 120px);
+  line-height: 0.9;
+  max-width: 100%;
+}
+
+.hero-title span {
+  display: block;
+  color: var(--accent);
+  font-style: italic;
+}
+
+.hero .hero-description {
+  max-width: 900px;
+  font-size: 1.125rem;
+  margin-top: 0px;
+}
+
+.hero-description span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  transition:
+    transform 250ms ease,
+    background 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(var(--accent-rgb), 0.25);
+}
+
+.btn-secondary {
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 120%;
+  max-width: 800px;
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  transition:
+    transform 500ms ease,
+    filter 500ms ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
+}
+
+
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    text-align: left;
+  }
+
+  .hero-left {
+    order: 1;
+  }
+
+  .hero-right {
+    order: 2;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+}

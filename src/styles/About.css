@@ -1,0 +1,372 @@
+/* ================================================================
+   ABOUT — bento dashboard
+   Bio, education, skills (rated), tools, and a handful of personal
+   stat tiles, in one dense grid. Same visual language as Experience:
+   mono labels, accent-coloured numerals/dots, dark surfaces.
+================================================================ */
+
+.about {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+
+/* ---- shared header (mirrors Experience's section-header) ---- */
+
+.about .section-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: .15em;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.about .section-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  max-width: 780px;
+}
+
+.about .section-description {
+  color: var(--text-muted);
+  font-size: var(--fs-body-lg);
+  line-height: 1.8;
+  max-width: 620px;
+  margin-bottom: 56px;
+}
+
+/* ================================
+   BENTO GRID
+================================ */
+
+.about-bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    "bio bio bio edu edu edu"
+    "bio bio bio skills skills skills"
+    "proj lang lead skills skills skills"
+    "tools tools tools tools offduty offduty";
+  gap: 16px;
+  align-items: stretch;
+}
+
+.about-tile {
+  background: var(--surface-card);
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  padding: 30px 28px;
+  transition: border-color var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.about-tile:hover {
+  border-color: rgba(var(--accent-rgb), 0.4);
+}
+
+.about-tile-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.about-tile-label::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Named grid-area assignments — explicit, no auto-flow guesswork */
+.about-tile--bio { grid-area: bio; }
+.about-tile--education { grid-area: edu; }
+.about-tile--skills { grid-area: skills; }
+.about-tile--tools { grid-area: tools; }
+.about-tile--offduty { grid-area: offduty; }
+.about-tile--stat-projects { grid-area: proj; }
+.about-tile--stat-languages { grid-area: lang; }
+.about-tile--stat-leadership { grid-area: lead; }
+
+@media (max-width: 1100px) {
+  .about-bento {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "bio bio"
+      "edu edu"
+      "skills skills"
+      "proj lang"
+      "lead lead"
+      "tools tools"
+      "offduty offduty";
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding: 80px 24px;
+  }
+
+  .about-bento {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "bio"
+      "edu"
+      "skills"
+      "proj"
+      "lang"
+      "lead"
+      "tools"
+      "offduty";
+  }
+}
+
+/* ================================
+   BIO TILE
+================================ */
+
+.about-bio-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.about-bio-role {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .06em;
+  color: var(--text-soft);
+  margin-bottom: 22px;
+}
+
+.about-bio-body {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  line-height: 1.8;
+  flex: 1;
+}
+
+.about-bio-body strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.about-philosophy {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.about-philosophy-split {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.about-philosophy-split span {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.about-philosophy-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--text-muted-2);
+  line-height: 1.6;
+}
+
+/* ================================
+   EDUCATION TILE
+================================ */
+
+.about-edu-degree {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.about-edu-meta {
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+}
+
+.about-edu-certs-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+.about-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-chip {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-tertiary);
+  background: var(--border-subtle);
+  border: 1px solid var(--border-default);
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+
+/* ================================
+   SKILLS TILE — grouped, rated
+================================ */
+
+.about-skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.about-skill-group-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 0;
+}
+
+.about-skill-name {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.about-skill-dots {
+  display: flex;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.about-skill-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border-default);
+}
+
+.about-skill-dot.is-filled {
+  background: var(--accent);
+}
+
+/* ================================
+   STAT TILES
+================================ */
+
+.about-stat-num {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.about-stat-num span {
+  font-size: 1.1rem;
+  color: var(--text-soft);
+}
+
+.about-stat-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.about-stat-sub {
+  margin-top: auto;
+  padding-top: 14px;
+  font-size: 12px;
+  color: var(--text-faint);
+  line-height: 1.6;
+}
+
+/* ================================
+   TOOLS TILE
+================================ */
+
+.about-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 28px;
+}
+
+.about-tools-group-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+  .about-tools-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================
+   OFF DUTY TILE
+================================ */
+
+.about-offduty-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-offduty-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+}
