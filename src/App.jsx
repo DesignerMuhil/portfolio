@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Cursor from "./Components/Cursor";
-import ThemeToggle from "./components/ThemeToggle";
+import ThemeToggle from "./Components/ThemeToggle";
 
 import Home from "./pages/Home";
 import JuristBotCaseStudy from "./pages/JuristBotCaseStudy";
