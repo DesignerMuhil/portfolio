@@ -157,7 +157,7 @@
 
 @media (max-width: 600px) {
   .contact {
-    padding: 80px 24px 80px;
+    padding: 24px 24px 0px;
   }
 
   .contact-links {
