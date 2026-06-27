@@ -56,9 +56,11 @@ function Hero() {
                 duration: 0.6
               }}
             >
-              <button className="btn-primary">
-                View Case Files
-              </button>
+              <Link to="/experience/diginest" className="case-btn-wrapper">
+                  <button className="btn-primary">
+                    View Case Files
+                  </button>
+                </Link>
 
               <a
                 href="/resume.pdf"
