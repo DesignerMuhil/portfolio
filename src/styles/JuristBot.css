@@ -1364,7 +1364,7 @@ section.case-hero {
     flex-direction: column;
     align-items: flex-start;
     gap: 32px;
-    padding: 48px 24px 64px;
+    padding: 48px 24px 32px;
   }
 
   .case-nav-next {
