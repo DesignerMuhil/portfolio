@@ -3,7 +3,7 @@ import "../styles/JuristBot.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import CardSwap, { Card } from "../components/CardSwap";
+import CardSwap, { Card } from "../Components/CardSwap";
 
 import signup from "../assets/juristbot/signup.png";
 import chatbot from "../assets/juristbot/chatbot.png";
