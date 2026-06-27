@@ -1,6 +1,7 @@
 import "../styles/Hero.css";
 import profileImage from "../assets/profile-pic.png";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
