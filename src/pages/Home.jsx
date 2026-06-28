@@ -7,7 +7,7 @@ import "../styles/Navbar.css";
 import "../styles/Hero.css";
 import "../styles/Experience.css";
 import About from "../sections/About";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 
 
 function Home() {
